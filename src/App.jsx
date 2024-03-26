@@ -1,5 +1,5 @@
-import * as React from "react";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
+import { APP_ID, SERVER_SECRET } from "./constants/constants";
 
 function randomID(len) {
   let result = "";
@@ -23,8 +23,8 @@ export default function App() {
   const roomID = getUrlParams().get("roomID") || randomID(5);
   let myMeeting = async (element) => {
     // generate Kit Token
-    const appID = 123;
-    const serverSecret = "";
+    const appID = APP_ID;
+    const serverSecret = SERVER_SECRET;
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
       appID,
       serverSecret,
